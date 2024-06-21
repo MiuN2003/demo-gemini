@@ -1,21 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light gray background */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f8f9fa; /* Màu nền nhẹ */
+    color: #333; /* Màu chữ chính */
 }
 
 .container {
-    background-color: white;
+    background-color: #fff; /* Nền của nội dung chính */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 50%;
-    text-align: center;
+    width: 80%; /* Chiều rộng phần chứa nội dung */
+    margin: 0 auto; /* Căn giữa */
+    max-width: 800px; /* Giới hạn chiều rộng */
+}
+
+.container {
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -26,8 +30,13 @@ p {
     font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 20px;
-    cursor: pointer;
     color: #555; /* Dark gray text */
+}
+
+.word {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 4px;
 }
 
 .popup {
@@ -95,4 +104,40 @@ strong {
 
 .popup-content {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Improved shadow for popup */
+}
+.word {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.word:hover {
+    color: #007bff; /* Màu sắc khi di chuột vào */
+}
+
+.popup-content {
+    transition: transform 0.3s ease;
+}
+
+.popup-content:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi di chuột vào */
+}
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Z-index lớn hơn để hiển thị popup trên tất cả các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Màu nền mờ */
+}
+#text {
+    margin-bottom: 10px; /* Ví dụ, thêm margin-bottom để tạo khoảng cách giữa các đoạn văn bản */
 }
